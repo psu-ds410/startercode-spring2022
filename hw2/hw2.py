@@ -2,12 +2,18 @@ from hwfunctions import fun_factor, fun_inc
 
 
 def delayed_increment(c, start, end):
-    # use fun_inc
+    x = dask.delayed(inc)(c)
+    y = dask.delayed(inc)(start)
+    z = dask.delayed(inc)(end)
+    total = dask.delayed(fun_inc)
     pass
 
 
 def delayed_factor(c, start, end):
-    # use fun_factor
+    x = dask.delayed(inc)(c)
+    y = dask.delayed(inc)(start)
+    z = dask.delayed(inc)(end)
+    total = dask.delayed(fun_factor)
     pass
 
 
