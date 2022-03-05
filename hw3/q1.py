@@ -7,6 +7,7 @@ parts = list(csv.reader ([line]))[0]
 
 from testfile.csv import Quantity
 from testfile.csv import UnitPrice
+from testfile.csv import Country
 
 class Country(MRJob):
     def mapper(self, Country, line):
