@@ -11,22 +11,22 @@ from testfile.csv import Country
 
 from mrjob.job import MRJob
 class Global(MRJob):
-   def mapper(self, key, line):
+   def mapper(self, Country, line):
       Country = line.split()
       for Country:
          yield ("_" + Country, 1)
          yield "Total_", 1
          country_name = key[0].upper()
          yield country_name +"_", 1
-   def reducer(self, key, amount):
+   def reducer(self, Country, amount):
       amount = (Quantity * Price)
-      yield (key, sum(amount))
+      yield (Country, sum(amount))
 if __name__ == '__main__':
     Global.run()
     
-  int getPartition(Key key, Value value, int numPart) {
+  int getPartition(key Country, Value amount, int numPart) {
     if key.startsWith("_") { //normal word
-       partition = 1 + (key.hash() % (numPart - 1))
+       partition = Country + (amount)
     }
     else { //Summary
        partition = 0
