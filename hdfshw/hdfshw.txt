@@ -1,0 +1,7 @@
+git pull staff2 main --allow-unrelated-histories
+hdfs dfs -mkdir -p /user/oshikamishra231/hw_hdfs 
+hdfs dfs –put part-00000 /user/oshikamishra231/hw_hdfs part-00001 /user/oshikamishra231/hw_hdfs part-00002 /user/oshikamishra231/hw_hdfs part-00003 /user/oshikamishra231/hw_hdfs
+hdfs dfs -mv /user/oshikamishra231/part-00000 /user/oshikamishra231/part-00001 /user/oshikamishra231/part-00002 /user/oshikamishra231/part-00003 /user/oshikamishra231/hw_words
+hdfs dfs -rm /user/oshikamishra231/hw_hdfs
+hdfs dfs -tail part-00002 /user/oshikamishra231/hw_words
+hdfs dfs -stat part-00001 /user/oshikamishra231/hw_words
